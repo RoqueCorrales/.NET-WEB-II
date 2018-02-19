@@ -1,0 +1,10 @@
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\bin\Debug\netcoreapp2.0\Proyecto_Web_ll.deps.json
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\bin\Debug\netcoreapp2.0\Proyecto_Web_ll.runtimeconfig.json
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\bin\Debug\netcoreapp2.0\Proyecto_Web_ll.runtimeconfig.dev.json
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\bin\Debug\netcoreapp2.0\Proyecto_Web_ll.dll
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\bin\Debug\netcoreapp2.0\Proyecto_Web_ll.pdb
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\obj\Debug\netcoreapp2.0\Proyecto_Web_ll.csproj.CoreCompileInputs.cache
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\obj\Debug\netcoreapp2.0\Proyecto_Web_ll.AssemblyInfoInputs.cache
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\obj\Debug\netcoreapp2.0\Proyecto_Web_ll.AssemblyInfo.cs
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\obj\Debug\netcoreapp2.0\Proyecto_Web_ll.dll
+C:\Users\roke1\Desktop\Utn\7 Cuatri\WEB II\Proyecto 1 .NET\Proyecto_Web_ll\obj\Debug\netcoreapp2.0\Proyecto_Web_ll.pdb
