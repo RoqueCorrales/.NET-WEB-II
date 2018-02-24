@@ -1,4 +1,4 @@
-@model IEnumerable<Proyecto_Web_ll.Models.Reunion>
+@model IEnumerable<Proyecto_Web_ll.Models.Ticket>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,16 +16,16 @@
                     @Html.DisplayNameFor(model => model.Titulo)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                    @Html.DisplayNameFor(model => model.Detalle)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Virtual)
+                    @Html.DisplayNameFor(model => model.PersonaReporte)
                 </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cliente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usuario)
+                @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th></th>
         </tr>
@@ -37,16 +37,16 @@
                 @Html.DisplayFor(modelItem => item.Titulo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                @Html.DisplayFor(modelItem => item.Detalle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Virtual)
+                @Html.DisplayFor(modelItem => item.PersonaReporte)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cliente.CedulaJuridica)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Contrasenna)
+                @Html.DisplayFor(modelItem => item.Estado.ID)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

@@ -1,4 +1,4 @@
-@model Proyecto_Web_ll.Models.Reunion
+@model Proyecto_Web_ll.Models.Ticket
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Reunion</h4>
+    <h4>Ticket</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,16 +17,16 @@
             @Html.DisplayFor(model => model.Titulo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
+            @Html.DisplayNameFor(model => model.Detalle)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EnrollmentDate)
+            @Html.DisplayFor(model => model.Detalle)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Virtual)
+            @Html.DisplayNameFor(model => model.PersonaReporte)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Virtual)
+            @Html.DisplayFor(model => model.PersonaReporte)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Cliente)
@@ -35,10 +35,10 @@
             @Html.DisplayFor(model => model.Cliente.CedulaJuridica)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Usuario)
+            @Html.DisplayNameFor(model => model.Estado)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Usuario.Contrasenna)
+            @Html.DisplayFor(model => model.Estado.ID)
         </dd>
     </dl>
 </div>

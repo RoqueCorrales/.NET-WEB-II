@@ -21,7 +21,8 @@ namespace Proyecto_Web_ll.Controllers
         // GET: Cliente
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cliente.ToListAsync());
+            var mvcToyotaContext = _context.Cliente.Include(c => c.Sector);
+            return View(await mvcToyotaContext.ToListAsync());
         }
 
         // GET: Cliente/Details/5
@@ -33,6 +34,7 @@ namespace Proyecto_Web_ll.Controllers
             }
 
             var cliente = await _context.Cliente
+                .Include(c => c.Sector)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (cliente == null)
             {
@@ -45,6 +47,7 @@ namespace Proyecto_Web_ll.Controllers
         // GET: Cliente/Create
         public IActionResult Create()
         {
+            ViewData["SectorID"] = new SelectList(_context.Sector, "ID", "Nombre");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace Proyecto_Web_ll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nombre,CedulaJuridica,PaginaWeb,DireccionFisica,telefono,Sector")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("ID,Nombre,CedulaJuridica,PaginaWeb,DireccionFisica,telefono,SectorID")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,7 @@ namespace Proyecto_Web_ll.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SectorID"] = new SelectList(_context.Sector, "ID", "Nombre", cliente.SectorID);
             return View(cliente);
         }
 
@@ -77,6 +81,7 @@ namespace Proyecto_Web_ll.Controllers
             {
                 return NotFound();
             }
+            ViewData["SectorID"] = new SelectList(_context.Sector, "ID", "Nombre", cliente.SectorID);
             return View(cliente);
         }
 
@@ -85,7 +90,7 @@ namespace Proyecto_Web_ll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,CedulaJuridica,PaginaWeb,DireccionFisica,telefono,Sector")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,CedulaJuridica,PaginaWeb,DireccionFisica,telefono,SectorID")] Cliente cliente)
         {
             if (id != cliente.ID)
             {
@@ -112,6 +117,7 @@ namespace Proyecto_Web_ll.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SectorID"] = new SelectList(_context.Sector, "ID", "Nombre", cliente.SectorID);
             return View(cliente);
         }
 
@@ -124,6 +130,7 @@ namespace Proyecto_Web_ll.Controllers
             }
 
             var cliente = await _context.Cliente
+                .Include(c => c.Sector)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (cliente == null)
             {

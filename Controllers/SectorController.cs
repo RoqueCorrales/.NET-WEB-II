@@ -9,23 +9,22 @@ using Proyecto_Web_ll.Models;
 
 namespace Proyecto_Web_ll.Controllers
 {
-    public class ContactoController : Controller
+    public class SectorController : Controller
     {
         private readonly MvcToyotaContext _context;
 
-        public ContactoController(MvcToyotaContext context)
+        public SectorController(MvcToyotaContext context)
         {
             _context = context;
         }
 
-        // GET: Contacto
+        // GET: Sector
         public async Task<IActionResult> Index()
         {
-            var mvcToyotaContext = _context.Contacto.Include(c => c.Cliente);
-            return View(await mvcToyotaContext.ToListAsync());
+            return View(await _context.Sector.ToListAsync());
         }
 
-        // GET: Contacto/Details/5
+        // GET: Sector/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,42 +32,39 @@ namespace Proyecto_Web_ll.Controllers
                 return NotFound();
             }
 
-            var contacto = await _context.Contacto
-                .Include(c => c.Cliente)
+            var sector = await _context.Sector
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (contacto == null)
+            if (sector == null)
             {
                 return NotFound();
             }
 
-            return View(contacto);
+            return View(sector);
         }
 
-        // GET: Contacto/Create
+        // GET: Sector/Create
         public IActionResult Create()
         {
-            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica");
             return View();
         }
 
-        // POST: Contacto/Create
+        // POST: Sector/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,ClienteID,Nombre,Apellido_Uno,Telefono,Correo,Puesto")] Contacto contacto)
+        public async Task<IActionResult> Create([Bind("ID,Nombre")] Sector sector)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(contacto);
+                _context.Add(sector);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", contacto.ClienteID);
-            return View(contacto);
+            return View(sector);
         }
 
-        // GET: Contacto/Edit/5
+        // GET: Sector/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,23 +72,22 @@ namespace Proyecto_Web_ll.Controllers
                 return NotFound();
             }
 
-            var contacto = await _context.Contacto.SingleOrDefaultAsync(m => m.ID == id);
-            if (contacto == null)
+            var sector = await _context.Sector.SingleOrDefaultAsync(m => m.ID == id);
+            if (sector == null)
             {
                 return NotFound();
             }
-            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", contacto.ClienteID);
-            return View(contacto);
+            return View(sector);
         }
 
-        // POST: Contacto/Edit/5
+        // POST: Sector/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,ClienteID,Nombre,Apellido_Uno,Telefono,Correo,Puesto")] Contacto contacto)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre")] Sector sector)
         {
-            if (id != contacto.ID)
+            if (id != sector.ID)
             {
                 return NotFound();
             }
@@ -101,12 +96,12 @@ namespace Proyecto_Web_ll.Controllers
             {
                 try
                 {
-                    _context.Update(contacto);
+                    _context.Update(sector);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ContactoExists(contacto.ID))
+                    if (!SectorExists(sector.ID))
                     {
                         return NotFound();
                     }
@@ -117,11 +112,10 @@ namespace Proyecto_Web_ll.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", contacto.ClienteID);
-            return View(contacto);
+            return View(sector);
         }
 
-        // GET: Contacto/Delete/5
+        // GET: Sector/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,31 +123,30 @@ namespace Proyecto_Web_ll.Controllers
                 return NotFound();
             }
 
-            var contacto = await _context.Contacto
-                .Include(c => c.Cliente)
+            var sector = await _context.Sector
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (contacto == null)
+            if (sector == null)
             {
                 return NotFound();
             }
 
-            return View(contacto);
+            return View(sector);
         }
 
-        // POST: Contacto/Delete/5
+        // POST: Sector/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var contacto = await _context.Contacto.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Contacto.Remove(contacto);
+            var sector = await _context.Sector.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Sector.Remove(sector);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ContactoExists(int id)
+        private bool SectorExists(int id)
         {
-            return _context.Contacto.Any(e => e.ID == id);
+            return _context.Sector.Any(e => e.ID == id);
         }
     }
 }

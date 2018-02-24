@@ -17,6 +17,9 @@ namespace Proyecto_Web_ll.Models
         public string Correo { get; set; }
         [Required]
         public string Contrasenna { get; set; }
+
+        [Required]
+        public Boolean Permisos { get; set; }
         public string Puesto { get; set; }
     }
 }

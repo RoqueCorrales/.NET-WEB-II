@@ -43,6 +43,13 @@
                 <span asp-validation-for="Contrasenna" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Permisos" /> @Html.DisplayNameFor(model => model.Permisos)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
                 <label asp-for="Puesto" class="control-label"></label>
                 <input asp-for="Puesto" class="form-control" />
                 <span asp-validation-for="Puesto" class="text-danger"></span>

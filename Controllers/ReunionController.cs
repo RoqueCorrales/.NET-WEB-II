@@ -21,7 +21,8 @@ namespace Proyecto_Web_ll.Controllers
         // GET: Reunion
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reunion.ToListAsync());
+            var mvcToyotaContext = _context.Reunion.Include(r => r.Cliente).Include(r => r.Usuario);
+            return View(await mvcToyotaContext.ToListAsync());
         }
 
         // GET: Reunion/Details/5
@@ -33,6 +34,8 @@ namespace Proyecto_Web_ll.Controllers
             }
 
             var reunion = await _context.Reunion
+                .Include(r => r.Cliente)
+                .Include(r => r.Usuario)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (reunion == null)
             {
@@ -45,6 +48,8 @@ namespace Proyecto_Web_ll.Controllers
         // GET: Reunion/Create
         public IActionResult Create()
         {
+            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica");
+            ViewData["UsuarioID"] = new SelectList(_context.Usuario, "ID", "Contrasenna");
             return View();
         }
 
@@ -53,7 +58,7 @@ namespace Proyecto_Web_ll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Id_Cliente,Titulo,EnrollmentDate,Virtual,Id_Usuario")] Reunion reunion)
+        public async Task<IActionResult> Create([Bind("ID,ClienteID,Titulo,EnrollmentDate,Virtual,UsuarioID")] Reunion reunion)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +66,8 @@ namespace Proyecto_Web_ll.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", reunion.ClienteID);
+            ViewData["UsuarioID"] = new SelectList(_context.Usuario, "ID", "Contrasenna", reunion.UsuarioID);
             return View(reunion);
         }
 
@@ -77,6 +84,8 @@ namespace Proyecto_Web_ll.Controllers
             {
                 return NotFound();
             }
+            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", reunion.ClienteID);
+            ViewData["UsuarioID"] = new SelectList(_context.Usuario, "ID", "Contrasenna", reunion.UsuarioID);
             return View(reunion);
         }
 
@@ -85,7 +94,7 @@ namespace Proyecto_Web_ll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Id_Cliente,Titulo,EnrollmentDate,Virtual,Id_Usuario")] Reunion reunion)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,ClienteID,Titulo,EnrollmentDate,Virtual,UsuarioID")] Reunion reunion)
         {
             if (id != reunion.ID)
             {
@@ -112,6 +121,8 @@ namespace Proyecto_Web_ll.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", reunion.ClienteID);
+            ViewData["UsuarioID"] = new SelectList(_context.Usuario, "ID", "Contrasenna", reunion.UsuarioID);
             return View(reunion);
         }
 
@@ -124,6 +135,8 @@ namespace Proyecto_Web_ll.Controllers
             }
 
             var reunion = await _context.Reunion
+                .Include(r => r.Cliente)
+                .Include(r => r.Usuario)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (reunion == null)
             {

@@ -11,9 +11,10 @@ using System;
 namespace Proyecto_Web_ll.Migrations
 {
     [DbContext(typeof(MvcToyotaContext))]
-    partial class MvcToyotaContextModelSnapshot : ModelSnapshot
+    [Migration("20180224053101_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

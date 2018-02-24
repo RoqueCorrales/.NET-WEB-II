@@ -17,6 +17,8 @@ namespace Proyecto_Web_ll.Models
         public  string DireccionFisica  { get; set; }
         public int? telefono { get; set; }
         [Required]
-        public string Sector { get; set; }
+          public int SectorID{get;set;}
+
+        public virtual  Sector Sector {get;set;}
     }
 }
