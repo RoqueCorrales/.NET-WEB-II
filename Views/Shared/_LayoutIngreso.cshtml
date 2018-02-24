@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] -   Toyota</title>
+    <title>@ViewData["Title"] - TOYOTA</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="body-t">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -25,23 +25,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                   
+                    
                 </button>
-              
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">TOYOTA</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                   <li><a asp-area="" asp-controller="Usuario" asp-action="Index">Usuario</a></li>
+                    <li><a asp-area="" asp-controller="Cliente" asp-action="Index">Cliente</a></li>
+                        <li><a asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a></li>
+                   
+                      <li><a asp-area="" asp-controller="Reunion" asp-action="Index">Reunion</a></li>
+                      
+                        <li><a asp-area="" asp-controller="Ticket" asp-action="Index">Ticket</a></li>
+                       
+                           <li><a asp-area="" asp-controller="Sector" asp-action="Index">Sector</a></li>
+                             <li><a asp-area="" asp-controller="Estado" asp-action="Index">Estado</a></li>
+
+                   
                 </ul>
-               
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+                <hr />
          <footer class="footer bg-dark text-white">
 
       
