@@ -6,23 +6,23 @@
 
 <h2>Create</h2>
 
-<h4>Reunion</h4>
+<h4>Meeting</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ClienteID" class="control-label"></label>
+                <label asp-for="ClienteID" class="control-label">Client's Identification</label>
                 <select asp-for="ClienteID" class ="form-control" asp-items="ViewBag.ClienteID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
+                <label asp-for="Titulo" class="control-label">Title</label>
                 <input asp-for="Titulo" class="form-control" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EnrollmentDate" class="control-label"></label>
+                <label asp-for="EnrollmentDate" class="control-label">Date</label>
                 <input asp-for="EnrollmentDate" class="form-control" />
                 <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
             </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="UsuarioID" class="control-label"></label>
+                <label asp-for="UsuarioID" class="control-label">UserName</label>
                 <select asp-for="UsuarioID" class ="form-control" asp-items="ViewBag.UsuarioID"></select>
             </div>
             <div class="form-group">

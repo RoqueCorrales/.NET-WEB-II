@@ -17,7 +17,7 @@ namespace Proyecto_Web_ll.Models
            [StringLength(50, ErrorMessage = "No puede ser mayor a 50 Caracteres.")]
          [Required]
         public string Apellido_Uno { get; set; }
-         [StringLength(50, ErrorMessage = "No puede ser mayor a 50 Caracteres.")]
+        
          [Required]
         public int Telefono { get; set; }
         public string Correo { get; set; }

@@ -49,7 +49,7 @@ namespace Proyecto_Web_ll.Controllers
         public IActionResult Create()
         {
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica");
-            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "ID");
+            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "Nombre");
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace Proyecto_Web_ll.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", ticket.ClienteID);
-            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "ID", ticket.EstadoID);
+            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "Nombre", ticket.EstadoID);
             return View(ticket);
         }
 
