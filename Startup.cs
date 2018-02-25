@@ -24,6 +24,8 @@ namespace Proyecto_Web_ll
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //services.AddCaching(); // Adds a default in-memory implementation of IDistributedCache
+services.AddSession(); 
             services.AddDbContext<MvcToyotaContext>(options =>
             options.UseSqlite("Data Source=Proyecto_Web_ll.db"));
         }
