@@ -4,12 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<strong class="strong">LIST OF TICKETS</strong>
+<br>
+<br>
+<div class="table-responsive">
+<table class="table table-hover">
     <thead>
         <tr>
                 <th>
@@ -46,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Cliente.CedulaJuridica)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estado.ID)
+                @Html.DisplayFor(modelItem => item.Estado.Nombre)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
@@ -57,3 +56,5 @@
 }
     </tbody>
 </table>
+<button type="button" class="btn btn-secondary center-block"> <a asp-action="Create">Create New</a></button>
+</div>

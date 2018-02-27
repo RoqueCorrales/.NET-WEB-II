@@ -4,15 +4,15 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container-fluid panel panel-default">
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to delete this condition?</h3>
 <div>
-    <h4>Estado</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
+           Name:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Nombre)
@@ -21,7 +21,9 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
+    <br>
+    </div>
 </div>

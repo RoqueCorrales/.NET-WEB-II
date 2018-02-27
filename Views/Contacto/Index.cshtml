@@ -5,12 +5,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<strong class="strong">LIST OF CONTACTS</strong>
+<br>
+<br>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<div class="table-responsive">
+<table class="table table-hover">
     <thead>
         <tr>
                 <th>
@@ -64,3 +64,5 @@
 }
     </tbody>
 </table>
+<button type="button" class="btn btn-secondary center-block"> <a asp-action="Create">Create New</a></button>
+</div>

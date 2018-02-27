@@ -4,51 +4,42 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details Client</h2>
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CedulaJuridica)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CedulaJuridica)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PaginaWeb)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PaginaWeb)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DireccionFisica)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DireccionFisica)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.telefono)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.telefono)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Sector)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Sector.Nombre)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="~/images/logo.png" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                          Name:  @Html.DisplayFor(model => model.Nombre)</h4>
+                        <small><cite >Address:  @Html.DisplayFor(model => model.DireccionFisica)<i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i> Web Page: @Html.DisplayFor(model => model.PaginaWeb)
+                            <br />
+                            <i class="glyphicon glyphicon-globe"></i><a>Indentification:  @Html.DisplayFor(model => model.CedulaJuridica)</a>
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i> Phone:  @Html.DisplayFor(model => model.telefono)</p>
+                            
+                            <i class="glyphicon glyphicon-gift"></i> Sector's Name:   @Html.DisplayFor(model => model.Sector.Nombre)</p>
+                            <br>
+                          <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+                           <a asp-action="Index">Back to List</a>
+                    </div>
+
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </div>
