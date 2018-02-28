@@ -23,7 +23,7 @@ Virtual                </th>
 Client            </th>
             <th>
 User            </th>
-            <th></th>
+             <th>Settings</th>
         </tr>
     </thead>
     <tbody>
@@ -45,9 +45,9 @@ User            </th>
                 @Html.DisplayFor(modelItem => item.Usuario.Contrasenna)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+              <a class="glyphicon glyphicon-pencil" asp-action="Edit" asp-route-id="@item.ID"></a>
+                <a class="glyphicon glyphicon-duplicate" asp-action="Details" asp-route-id="@item.ID"></a> 
+                <a class="glyphicon glyphicon-remove-circle" asp-action="Delete" asp-route-id="@item.ID"></a>
             </td>
         </tr>
 }

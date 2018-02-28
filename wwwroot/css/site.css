@@ -3,6 +3,7 @@
     padding-top: 5%;
     background-image: url("/images/5.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 .strong {
     text-align: center;

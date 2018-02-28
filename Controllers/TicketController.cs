@@ -84,8 +84,8 @@ namespace Proyecto_Web_ll.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "CedulaJuridica", ticket.ClienteID);
-            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "ID", ticket.EstadoID);
+            ViewData["ClienteID"] = new SelectList(_context.Cliente, "ID", "Nombre", ticket.ClienteID);
+            ViewData["EstadoID"] = new SelectList(_context.Estado, "ID", "Nombre", ticket.EstadoID);
             return View(ticket);
         }
 

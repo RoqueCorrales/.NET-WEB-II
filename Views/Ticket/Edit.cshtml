@@ -14,27 +14,27 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
+                <label asp-for="Titulo" class="control-label">Title</label>
                 <input asp-for="Titulo" class="form-control" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Detalle" class="control-label"></label>
+                <label asp-for="Detalle" class="control-label">Details</label>
                 <input asp-for="Detalle" class="form-control" />
                 <span asp-validation-for="Detalle" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PersonaReporte" class="control-label"></label>
+                <label asp-for="PersonaReporte" class="control-label">Person who reported?</label>
                 <input asp-for="PersonaReporte" class="form-control" />
                 <span asp-validation-for="PersonaReporte" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ClienteID" class="control-label"></label>
+                <label asp-for="ClienteID" class="control-label">Client</label>
                 <select asp-for="ClienteID" class="form-control" asp-items="ViewBag.ClienteID"></select>
                 <span asp-validation-for="ClienteID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EstadoID" class="control-label"></label>
+                <label asp-for="EstadoID" class="control-label">Condition</label>
                 <select asp-for="EstadoID" class="form-control" asp-items="ViewBag.EstadoID"></select>
                 <span asp-validation-for="EstadoID" class="text-danger"></span>
             </div>
