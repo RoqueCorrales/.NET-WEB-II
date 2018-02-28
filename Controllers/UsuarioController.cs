@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -147,6 +148,35 @@ namespace Proyecto_Web_ll.Controllers
         private bool UsuarioExists(int id)
         {
             return _context.Usuario.Any(e => e.ID == id);
+        }
+
+         public async Task<IActionResult> Login([Bind("User,Contrasenna")] Usuario users)
+        {
+
+            var user = await _context.Usuario
+               .SingleOrDefaultAsync(m => m.User == users.User&& m.Contrasenna == users.Contrasenna);
+
+            if (user != null)
+            {
+
+              
+  
+
+             
+              return RedirectToAction(nameof(Index));
+                    
+              
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "El Usuario o la contraseña son erroneas");
+                 return RedirectToAction(nameof(HomeController));
+                  
+            }
+           
+          
+
         }
     }
 }

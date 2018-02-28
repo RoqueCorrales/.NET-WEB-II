@@ -4,7 +4,7 @@
 
 
         <div class="container">
-        <form class="form-horizontal" role="form" method="POST" action="/login">
+        <form class="form-horizontal" role="form" method="POST" >
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
@@ -16,11 +16,11 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="form-group has-danger">
-                        <label class="sr-only" for="email">Usuario</label>
+                        <label class="sr-only" for="User">User</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                            <input type="text" name="usuario" class="form-control" id="usuario"
-                                   placeholder="Usuario" required autofocus>
+                            <input type="text" name="User" class="form-control" id="User"
+                                   placeholder="User" required autofocus>
                         </div>
                     </div>
                 </div>
@@ -30,11 +30,11 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="sr-only" for="password">Contraseña</label>
+                        <label class="sr-only" for="Contrasenna">Contraseña</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="form-control" id="password"
-                                   placeholder="Password" required>
+                            <input type="password" name="Contrasenna" class="form-control" id="Contrasenna"
+                                   placeholder="Contrasena" required>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             <div class="row" style="padding-top: 1rem">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
+                    <button type="submit"  asp-controller="Usuario" asp-action="Login" class="btn btn-success"> Ingresar</button>
                     <a asp-area="" asp-controller="Aplicacion" asp-action="Menu">Ingreso</a>
                 </div>
             </div>
