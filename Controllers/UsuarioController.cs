@@ -162,8 +162,9 @@ namespace Proyecto_Web_ll.Controllers
               
   
 
-             
-              return RedirectToAction(nameof(Index));
+             Session.isSingin=true;
+             Session.isAdmin = user.Permisos;
+              return RedirectToAction("Menu","Aplicacion");
                     
               
 
@@ -171,9 +172,32 @@ namespace Proyecto_Web_ll.Controllers
             else
             {
                 ModelState.AddModelError("", "El Usuario o la contraseña son erroneas");
-                 return RedirectToAction(nameof(HomeController));
+                 return RedirectToAction("Index","Home");
                   
             }
+           
+          
+
+        }
+        public async Task<IActionResult> SignOut()
+        {
+
+            
+
+            if (Session.isSingin)
+            {
+
+              
+  
+
+             Session.isSingin=false;
+            
+                    
+              
+
+            }
+             return RedirectToAction("Index","Home");
+           
            
           
 

@@ -17,6 +17,9 @@
     </environment>
 </head>
 <body>
+    @if(Session.isSingin){
+
+    
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -32,7 +35,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @if(Session.isAdmin){
                    <li><a asp-area="" asp-controller="Usuario" asp-action="Index">Users</a></li>
+                   }
                     <li><a asp-area="" asp-controller="Cliente" asp-action="Index">Clients</a></li>
                         <li><a asp-area="" asp-controller="Contacto" asp-action="Index">Contacts</a></li>
                    
@@ -42,13 +47,18 @@
                        
                            <li><a asp-area="" asp-controller="Sector" asp-action="Index">Work Area</a></li>
                              <li><a asp-area="" asp-controller="Estado" asp-action="Index">Condition</a></li>
+                       @if(Session.isAdmin){
+                   <li><a asp-area="" asp-controller="Usuario" asp-action="SignOut">Sign Out</a></li>
+                   }  
 
                    
                 </ul>
             </div>
         </div>
     </nav>
+    }
     <div class="container body-content">
+        
         @RenderBody()
                 <hr />
          <footer class="footer bg-dark text-white">
