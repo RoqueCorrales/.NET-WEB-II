@@ -4,38 +4,58 @@
 @{
     ViewData["Title"] = "Login";
 }
-
-
-<div class="container ">
-
-   <form class="form-horizontal" role="form" method="POST" >
-       <div id="over" style="position:absolute; width:100%; height:100%">
-<img  src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Crystal_Clear_app_Login_Manager.png">
-       </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="username"></label>
-      <div class="col-sm-7">
-        <input type="text" class="form-control" id="User" placeholder="Enter Username" name="User"required >
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="password"></label>
-      <div class="col-sm-7">          
-        <input type="password" class="form-control" id="Contrasenna" placeholder="Enter password" name="Contrasenna"required>
-      </div>
-    </div>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-5 ">
-       <button type="submit"  asp-controller="Usuario" asp-action="Login" class="btn btn-success"> Ingresar</button>
-        </button>
-      </div>
-    </div>
-    
-   
-  
-  
-  </form>
-
-</div>
+        <div class="container">
+        <form class="form-horizontal" role="form" method="POST" >
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h2>EL QUE TIENE UN TOYOTA, SABE.</h2>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <label class="sr-only" for="User">User</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                            <input type="text" name="User" class="form-control" id="User"
+                                   placeholder="User" required autofocus>
+                        </div>
+                    </div>
+                </div>
+          
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="sr-only" for="Contrasenna">Contraseña</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                            <input type="password" name="Contrasenna" class="form-control" id="Contrasenna"
+                                   placeholder="Contrasena" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                        <!-- Put password error message here -->    
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+              
+            </div>
+            <div class="row" style="padding-top: 1rem">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit"  asp-controller="Usuario" asp-action="Login" class="btn btn-success"> Ingresar</button>
+                    
+                </div>
+            </div>
+      </form>

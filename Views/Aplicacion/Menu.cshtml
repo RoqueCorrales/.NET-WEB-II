@@ -6,6 +6,7 @@
 @{
     ViewData["Title"] = "Menu Page";
 }
+@if(Session.isSingin){
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
@@ -64,3 +65,4 @@
     </a>
 </div>
 
+}

@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+@if(Session.isSingin){
 
 <strong class="strong">LIST OF MEETINGS</strong>
 <br>
@@ -55,3 +56,4 @@ User            </th>
 </table>
 <button type="button" class="btn btn-secondary center-block"> <a asp-action="Create">Create New</a></button>
 </div>
+}

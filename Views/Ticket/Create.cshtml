@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+@if(Session.isSingin){
 <div class="panel panel-default">
   <div class="panel-heading">Create Ticket</div>
   <div class="panel-body">
@@ -47,6 +47,7 @@
 </div>
 </div>
 </div>
+}
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

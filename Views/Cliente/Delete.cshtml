@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+@if(Session.isSingin){
 <div class="container-fluid panel panel-default">
 
 <h3>Are you sure you want to delete this Client?</h3>
@@ -57,3 +57,4 @@
     <br>
 </div>
 </div>
+}

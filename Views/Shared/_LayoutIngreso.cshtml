@@ -47,7 +47,7 @@
                        
                            <li><a asp-area="" asp-controller="Sector" asp-action="Index">Work Area</a></li>
                              <li><a asp-area="" asp-controller="Estado" asp-action="Index">Condition</a></li>
-                       @if(Session.isAdmin){
+                       @if(Session.isSingin){
                    <li><a asp-area="" asp-controller="Usuario" asp-action="SignOut">Sign Out</a></li>
                    }  
 
