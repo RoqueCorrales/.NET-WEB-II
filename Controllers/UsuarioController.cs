@@ -191,6 +191,7 @@ namespace Proyecto_Web_ll.Controllers
   
 
              Session.isSingin=false;
+             Session.isAdmin=false;
             
                     
               
